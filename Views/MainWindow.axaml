@@ -6,6 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="datagridrepro.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
+        x:Name="root"
         Icon="/Assets/avalonia-logo.ico"
         Title="datagridrepro">
 
@@ -26,7 +27,7 @@
 
                             <ComboBox
                                 Foreground="{Binding Color}"
-                                ItemsSource="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ColorsSource}"
+                                ItemsSource="{Binding #root.((vm:MainWindowViewModel)DataContext).ColorsSource}"
                                 SelectedItem="{Binding Color}" />
 
 
