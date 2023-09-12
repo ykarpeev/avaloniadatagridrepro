@@ -26,6 +26,7 @@
                         <DataTemplate>
 
                             <ComboBox
+                                Foreground="{Binding Color}"
                                 ItemsSource="{Binding #root.((vm:MainWindowViewModel)DataContext).ColorsSource}"
                                 SelectedItem="{Binding Color}" />
 
