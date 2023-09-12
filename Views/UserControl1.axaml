@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			 x:Name="root"
-			 xmlns:vm="using:datagridrepro.ViewModels"
+			        xmlns:vm="using:datagridrepro.ViewModels"
 
 			 x:DataType="vm:MainWindowViewModel"
              x:Class="datagridrepro.Views.UserControl1">
@@ -21,7 +21,6 @@
 							Foreground="{Binding Color}"
 							ItemsSource="{Binding #root.((vm:MainWindowViewModel)DataContext).ColorsSource}"
 							SelectedItem="{Binding Color}" />
-
 
 					</DataTemplate>
 

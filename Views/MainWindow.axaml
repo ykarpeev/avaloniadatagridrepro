@@ -1,29 +1,35 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:datagridrepro.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="datagridrepro.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        x:Name="root"
-		xmlns:local="using:datagridrepro.Views"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="datagridrepro">
+<Window
+    x:Class="datagridrepro.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:datagridrepro.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:datagridrepro.ViewModels"
+    x:Name="root"
+    Title="datagridrepro"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    mc:Ignorable="d">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
-	<TabControl>
-		<TabItem Header="Test">
-			<local:UserControl1 DataContext="{Binding}"></local:UserControl1>
-		</TabItem>
-		<TabItem Header="Grid">
+    <TabControl>
+        <TabItem Header="Test">
+            <ContentControl>
 
-		</TabItem>
-		
-	</TabControl>
+                <local:UserControl1 DataContext="{Binding}" />
+            </ContentControl>
+        </TabItem>
+        <TabItem Header="Grid" />
+
+    </TabControl>
 </Window>
