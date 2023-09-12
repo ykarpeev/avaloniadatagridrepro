@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:Name="root"
+			 xmlns:vm="using:datagridrepro.ViewModels"
+
+			 x:DataType="vm:MainWindowViewModel"
+             x:Class="datagridrepro.Views.UserControl1">
+	<DataGrid ItemsSource="{Binding StatusCodes}" SelectedItem="{Binding SelectedItem}">
+		<DataGrid.Columns>
+			<DataGridTextColumn Binding="{Binding Code}" Header="Code" />
+
+
+			<DataGridTemplateColumn Header="Color" IsReadOnly="False">
+				<DataGridTemplateColumn.CellTemplate>
+					<DataTemplate>
+
+						<ComboBox
+							Foreground="{Binding Color}"
+							ItemsSource="{Binding #root.((vm:MainWindowViewModel)DataContext).ColorsSource}"
+							SelectedItem="{Binding Color}" />
+
+
+					</DataTemplate>
+
+				</DataGridTemplateColumn.CellTemplate>
+			</DataGridTemplateColumn>
+
+			<DataGridTextColumn Binding="{Binding Message}" Header="Message" />
+		</DataGrid.Columns>
+	</DataGrid>
+</UserControl>

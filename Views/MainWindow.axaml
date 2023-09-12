@@ -7,6 +7,7 @@
         x:Class="datagridrepro.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         x:Name="root"
+		xmlns:local="using:datagridrepro.Views"
         Icon="/Assets/avalonia-logo.ico"
         Title="datagridrepro">
 
@@ -16,28 +17,13 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-<DataGrid ItemsSource="{Binding StatusCodes}" SelectedItem="{Binding SelectedItem}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Binding="{Binding Code}" Header="Code" />
+	<TabControl>
+		<TabItem Header="Test">
+			<local:UserControl1 DataContext="{Binding}"></local:UserControl1>
+		</TabItem>
+		<TabItem Header="Grid">
 
-
-                <DataGridTemplateColumn Header="Color" IsReadOnly="False">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-
-                            <ComboBox
-                                Foreground="{Binding Color}"
-                                ItemsSource="{Binding #root.((vm:MainWindowViewModel)DataContext).ColorsSource}"
-                                SelectedItem="{Binding Color}" />
-
-
-                        </DataTemplate>
-
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTextColumn Binding="{Binding Message}" Header="Message" />
-            </DataGrid.Columns>
-        </DataGrid>
-
+		</TabItem>
+		
+	</TabControl>
 </Window>
