@@ -27,7 +27,6 @@
 
                             <ComboBox
                                 ItemsSource="{Binding #root.((vm:MainWindowViewModel)DataContext).ColorsSource}"
-                                ItemsSource="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).ColorsSource}"
                                 SelectedItem="{Binding Color}" />
 
 
